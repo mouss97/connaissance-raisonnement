@@ -149,7 +149,7 @@ class Quiz:
                 self.score_label.config(text = "Score: {}".format(self.score))
                 # messagebox.showinfo("Correct", "Your answer is correct!")
                 self.next()
-            else:
+            # else:
                 # messagebox.showinfo("Incorrect", "Your answer is incorrect!, Try again ...")
 
     def next(self):
