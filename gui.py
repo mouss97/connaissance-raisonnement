@@ -29,7 +29,7 @@ class Quiz:
         self.frame_content = ttk.Frame(self.parent)
         self.frame_content.pack()
 
-        self.logo = PhotoImage(file = "logo.png")
+        self.logo = PhotoImage(file = "connaissance-raisonnement/logo.png")
         ttk.Label(self.frame_header, image = self.logo).grid(row = 0, column = 0, rowspan = 2)
         ttk.Label(self.frame_header, text = "Quiz", style = "Header.TLabel").grid(row = 0, column = 1)
         ttk.Label(self.frame_header, wraplength = 300,
@@ -80,31 +80,36 @@ class Quiz:
         self.button_quit = ttk.Button(self.button_frame, text = "Quit", command = self.quit)
         self.button_quit.grid(row = 0, column = 2, padx = 50)
 
+    
+
     def quiz_bank(self):
-        df = pd.read_csv('data.csv')
+        # Questions
+        question_1,question_2,question_3 = "Quel est le pays organisateur ?","Quel est le pays vainqueur ?","Quel est le nombre de pays participants ?"
+        questions = [question_1, question_2, question_3]
+    
+            
+        def fill_answers(df,val):
+            dict={}
+            col=['countryLabel','winnerLabel','participantsLabel']
+            for col in col:
+                answers=df[df[col]!=val[col]][col].to_list()
+                unique_answers=list(set(answers))
+                alt_answers=random.sample(unique_answers,3)
+                alt_answers.append(val[col])
+                dict['col']=alt_answers
+            return list(dict.values())
+
+    
+        df = pd.read_csv('connaissance-raisonnement/data.csv')
         quiz_bank = {}
-        for ind,val in df.iterrows(): #['itemLabel.value'].unique():
-            df1 = df.drop([ind], axis=0)
-            r = [random.randint(0,len(df1)-1) for _ in range(3)] + [ind]
-            
-            question_1 = "Quel est le pays organisateur ?"
-            r_answer_1 = val['countryLabel']
-            answers_1 = df.reset_index().loc[r,'countryLabel'].tolist()
-            
-            question_2 = "Quel est le pays vainqueur ?"
-            r_answer_2 = val['winnerLabel']
-            answers_2 = df.reset_index().loc[r,'winnerLabel'].tolist()
-            
-            question_3 = "Quel est le nombre de pays participants ?"
-            r_answer_3 = val['participantsLabel']
-            answers_3 = df.reset_index().loc[r,'participantsLabel'].tolist()
-            
-            questions = [question_1, question_2, question_3]
+        for _,val in df.iterrows(): #['itemLabel.value'].unique():
+            r_answer_1,r_answer_2,r_answer_3 = val['countryLabel'],val['winnerLabel'],val['participantsLabel']
             answers = [r_answer_1,r_answer_2,r_answer_3]
-            alt_answers = [answers_1,answers_2,answers_3]
-            
+            alt_answers=fill_answers(df,val)
             quiz_bank[val['itemLabel']] = {"Question": questions, "Correct Answer": answers, "answers": alt_answers}
         return quiz_bank
+
+
 
 
     def submit(self):
