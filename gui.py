@@ -142,21 +142,17 @@ class Quiz:
         return quiz_bank
 
     def submit(self):
-            
             '''Check the answer and display the result'''
     
             if self.var.get() == self.correct_answers[self.question_number]:
                 self.score += 1
                 self.score_label.config(text = "Score: {}".format(self.score))
-                messagebox.showinfo("Correct", "Your answer is correct!")
+                # messagebox.showinfo("Correct", "Your answer is correct!")
                 self.next()
             else:
-                messagebox.showinfo("Incorrect", "Your answer is incorrect!, Retry....")
-            
-            
+                # messagebox.showinfo("Incorrect", "Your answer is incorrect!, Try again ...")
 
     def next(self):
-                
         '''Go to the next question'''
         #print(self.var.get(),self.question_number)
         self.var.set(0)
