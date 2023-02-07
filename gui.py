@@ -96,7 +96,7 @@ class Quiz:
                 unique_answers=list(set(answers))
                 alt_answers=random.sample(unique_answers,3)
                 alt_answers.append(val[col])
-                dict['col']=alt_answers
+                dict[col]=alt_answers
             return list(dict.values())
 
     
