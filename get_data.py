@@ -38,7 +38,7 @@ results_df = results_df[results_df['itemLabel'] != '2002 FIFA World Cup']
 results_df = results_df.append({'item': 'http://www.wikidata.org/entity/Q19317', 'itemLabel': '2002 FIFA World Cup',
 'winnerLabel': 'Brazil', 'participantsLabel': '32',
 'countryLabel': 'South Korea & Japan',
-'leaderLabel': 'José Luis Chilavert'}, ignore_index=True)
+'leaderLabel': 'Ronaldo'}, ignore_index=True)
 
 # leaderLabel : cast to string
 results_df['leaderLabel'] = results_df['leaderLabel'].astype(str)
