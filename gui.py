@@ -152,7 +152,7 @@ class Quiz:
 
             dict={}
             for col in col:
-                answers=df[df[col]!=val[col]][col].to_list()
+                answers=df[(df[col]!=val[col])&(~df[col].isna())][col].to_list()
                 unique_answers=list(set(answers))
                 alt_answers=random.sample(unique_answers,3)
                 alt_answers.append(val[col])
