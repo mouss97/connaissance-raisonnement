@@ -64,7 +64,7 @@ class Quiz:
         self.lives = 5
 
         # Edition 
-        ttk.Label(self.frame_header, wraplength = 300,
+        self.affichageed = ttk.Label(self.frame_header, wraplength = 300,
                 text = (list(self.bank.keys())[-1]), font = ("Calibri", 20, 'bold')).grid(row = 6, column = 1)
 
         ttk.Label(self.frame_header, text = "- - - - - - - - - - - - - - - - -", font = ("Calibri", 20, "bold")).grid(row = 7, column = 1)
@@ -204,8 +204,8 @@ class Quiz:
         # Update edition
         if self.question_number %4 == 0:
             self.edition -= 1
-            ttk.Label(self.frame_header, wraplength = 300,
-                text = (list(self.bank.keys())[self.edition])).grid(row = 1, column = 1)
+            self.affichageed = ttk.Label(self.frame_header, wraplength = 300,
+                text = (list(self.bank.keys())[self.edition]), font = ("Calibri", 20, 'bold')).grid(row = 6, column = 1)
 
         if self.question_number == len(self.questions):
             messagebox.showinfo("Quiz completed", "Your score is {}/{}".format(self.score, self.question_number))
