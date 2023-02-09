@@ -104,22 +104,28 @@ class Quiz:
         self.score_label = ttk.Label(self.frame_content, text = "Score: 0")
         self.score_label.grid(row = 7, column = 0, pady = 20)
 
-        
-
-
-
-
-
 
     def quiz_bank(self):
+        """
+        After means that there are specific questions asked from 1966
+        """
         # Questions
-        question_1,question_2,question_3,question_4 = "Quel est le pays organisateur ?","Quel est le pays vainqueur ?","Quel est le nombre de pays participants ?","Qui était le meilleur buteur ?"
+        question_1,question_2,question_3,question_4, question_5 = "Quel est le pays organisateur ?",
+        "Quel est le pays vainqueur ?",
+        "Quel est le nombre de pays participants ?",
+        "Qui était le meilleur buteur ?",
+        "Quelle est la mascotte ?"
+
         questions = [question_1, question_2, question_3, question_4]
+        questions_after = [question_1, question_2, question_5, question_4]
     
-            
-        def fill_answers(df,val):
+        def fill_answers(df, val, after=False):
+            if after:
+                col=['countryLabel', 'winnerLabel','mascotLabel','leaderLabel']
+            else:
+                col=['countryLabel','winnerLabel','participantsLabel','leaderLabel']
+
             dict={}
-            col=['countryLabel','winnerLabel','participantsLabel','leaderLabel']
             for col in col:
                 answers=df[df[col]!=val[col]][col].to_list()
                 unique_answers=list(set(answers))
@@ -135,10 +141,19 @@ class Quiz:
         df['participantsLabel'] = df['participantsLabel'].astype(str)
         quiz_bank = {}
         for _,val in df.iterrows(): #['itemLabel.value'].unique():
-            r_answer_1,r_answer_2,r_answer_3,r_answer_4 = val['countryLabel'],val['winnerLabel'],val['participantsLabel'],val['leaderLabel']
+            r_answer_1,r_answer_2,r_answer_3,r_answer_4, r_answer_5 = val['countryLabel'],val['winnerLabel'],val['participantsLabel'],val['leaderLabel'], val['mascotLabel']
             answers = [r_answer_1,r_answer_2,r_answer_3,r_answer_4]
             alt_answers=fill_answers(df,val)
-            quiz_bank[val['itemLabel']] = {"Question": questions, "Correct Answer": answers, "answers": alt_answers}
+            answers_after = [r_answer_1,r_answer_2,r_answer_5,r_answer_4]
+            alt_answers_after =fill_answers(df,val)
+
+            # differentiate between before 1966 and after
+            if val['itemLabel'] < '1966 FIFA World Cup':
+                quiz_bank[val['itemLabel']] = {"Question": questions, "Correct Answer": answers, "answers": alt_answers}
+
+            else:
+                quiz_bank[val['itemLabel']] = {"Question": questions_after, "Correct Answer": answers_after, "answers": alt_answers_after}
+
         return quiz_bank
 
     def submit(self):
@@ -165,6 +180,8 @@ class Quiz:
 
         if self.question_number == len(self.questions):
             messagebox.showinfo("Quiz completed", "Your score is {}/{}".format(self.score, self.question_number))
+            if self.score == self.question_number:
+                messagebox.showinfo("Congratulations", "And you got a Strike !")
             self.parent.destroy()
         else:
             self.question.config(text = self.questions[self.question_number])
@@ -184,7 +201,5 @@ if __name__ == "__main__":
     root = Tk()
     quiz = Quiz(root)
     root.mainloop()
-
-# I have a problem with the code above. I want to make the radio buttons to be disabled after the user submits the answer. I tried to use the state = DISABLED but it doesn't work. I also tried to use the .configure() method but it doesn't work either. I would appreciate any help.
 
 
