@@ -1,23 +1,23 @@
-item,itemLabel,winnerLabel,participantsLabel,countryLabel,leaderLabel
-http://www.wikidata.org/entity/Q48432,1930 FIFA World Cup,Uruguay,13,Uruguay,Guillermo Stábile
-http://www.wikidata.org/entity/Q1477177,1934 FIFA World Cup,Italy,16,Italy,Oldřich Nejedlý
-http://www.wikidata.org/entity/Q131591,1938 FIFA World Cup,Italy,15,France,Leônidas
-http://www.wikidata.org/entity/Q132515,1950 FIFA World Cup,Uruguay,13,Brazil,Ademir de Menezes
-http://www.wikidata.org/entity/Q131075,1954 FIFA World Cup,Germany,16,Switzerland,Sándor Kocsis
-http://www.wikidata.org/entity/Q132533,1958 FIFA World Cup,Brazil,16,Sweden,Just Fontaine
-http://www.wikidata.org/entity/Q160813,1962 FIFA World Cup,Brazil,16,Chile,Garrincha
-http://www.wikidata.org/entity/Q134202,1966 FIFA World Cup,England,16,United Kingdom,Eusébio
-http://www.wikidata.org/entity/Q132664,1970 FIFA World Cup,Brazil,16,Mexico,Gerd Müller
-http://www.wikidata.org/entity/Q166121,1974 FIFA World Cup,Germany,16,Germany,Grzegorz Lato
-http://www.wikidata.org/entity/Q46943,1978 FIFA World Cup,Argentina,16,Argentina,Mario Kempes
-http://www.wikidata.org/entity/Q46934,1982 FIFA World Cup,Italy,24,Mexico,Paolo Rossi
-http://www.wikidata.org/entity/Q46938,1986 FIFA World Cup,Argentina,24,Mexico,Gary Lineker
-http://www.wikidata.org/entity/Q132529,1990 FIFA World Cup,Germany,24,Italy,Salvatore Schillaci
-http://www.wikidata.org/entity/Q101751,1994 FIFA World Cup,Brazil,24,United States of America,Oleg Salenko
-http://www.wikidata.org/entity/Q101730,1998 FIFA World Cup,France,32,France,Davor Šuker
-http://www.wikidata.org/entity/Q19317,2002 FIFA World Cup,Brazil,32,South Korea & Japan,José Luis Chilavert
-http://www.wikidata.org/entity/Q37285,2006 FIFA World Cup,Italy,32,Germany,Miroslav Klose
-http://www.wikidata.org/entity/Q176883,2010 FIFA World Cup,Spain,32,South Africa,Thomas Müller
-http://www.wikidata.org/entity/Q79859,2014 FIFA World Cup,Germany,32,Brazil,Thomas Müller
-http://www.wikidata.org/entity/Q170645,2018 FIFA World Cup,France,32,Russia,Harry Kane
-http://www.wikidata.org/entity/Q284163,2022 FIFA World Cup,Argentina,32,Qatar,Kylian Mbappé
+item,itemLabel,winnerLabel,participantsLabel,countryLabel,mascotLabel,leaderLabel
+http://www.wikidata.org/entity/Q48432,1930 FIFA World Cup,Uruguay,13,Uruguay,,Guillermo Stábile
+http://www.wikidata.org/entity/Q1477177,1934 FIFA World Cup,Italy,16,Italy,,Oldřich Nejedlý
+http://www.wikidata.org/entity/Q131591,1938 FIFA World Cup,Italy,15,France,,Leônidas
+http://www.wikidata.org/entity/Q132515,1950 FIFA World Cup,Uruguay,13,Brazil,,Ademir de Menezes
+http://www.wikidata.org/entity/Q131075,1954 FIFA World Cup,Germany,16,Switzerland,,Sándor Kocsis
+http://www.wikidata.org/entity/Q132533,1958 FIFA World Cup,Brazil,16,Sweden,,Just Fontaine
+http://www.wikidata.org/entity/Q160813,1962 FIFA World Cup,Brazil,16,Chile,,Garrincha
+http://www.wikidata.org/entity/Q134202,1966 FIFA World Cup,England,16,United Kingdom,World Cup Willie,Eusébio
+http://www.wikidata.org/entity/Q132664,1970 FIFA World Cup,Brazil,16,Mexico,Menganito,Gerd Müller
+http://www.wikidata.org/entity/Q166121,1974 FIFA World Cup,Germany,16,Germany,Tip and Tap,Grzegorz Lato
+http://www.wikidata.org/entity/Q46943,1978 FIFA World Cup,Argentina,16,Argentina,Gauchito,Mario Kempes
+http://www.wikidata.org/entity/Q46934,1982 FIFA World Cup,Italy,24,Mexico,Naranjito,Paolo Rossi
+http://www.wikidata.org/entity/Q46938,1986 FIFA World Cup,Argentina,24,Mexico,Gauchito,Gary Lineker
+http://www.wikidata.org/entity/Q132529,1990 FIFA World Cup,Germany,24,Italy,Ciao,Salvatore Schillaci
+http://www.wikidata.org/entity/Q101751,1994 FIFA World Cup,Brazil,24,United States of America,Striker,Oleg Salenko
+http://www.wikidata.org/entity/Q101730,1998 FIFA World Cup,France,32,France,Footix,Davor Šuker
+http://www.wikidata.org/entity/Q19317,2002 FIFA World Cup,Brazil,32,South Korea & Japan,"Ato, Kaz and Nik",Ronaldo
+http://www.wikidata.org/entity/Q37285,2006 FIFA World Cup,Italy,32,Germany,Goleo VI,Miroslav Klose
+http://www.wikidata.org/entity/Q176883,2010 FIFA World Cup,Spain,32,South Africa,Zakami,Thomas Müller
+http://www.wikidata.org/entity/Q79859,2014 FIFA World Cup,Germany,32,Brazil,Puteco,Thomas Müller
+http://www.wikidata.org/entity/Q170645,2018 FIFA World Cup,France,32,Russia,Zabivaka,Harry Kane
+http://www.wikidata.org/entity/Q284163,2022 FIFA World Cup,Argentina,32,Qatar,La'eeb,Kylian Mbappé

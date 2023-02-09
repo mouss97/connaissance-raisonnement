@@ -110,10 +110,10 @@ class Quiz:
         After means that there are specific questions asked from 1966
         """
         # Questions
-        question_1,question_2,question_3,question_4, question_5 = "Quel est le pays organisateur ?",
-        "Quel est le pays vainqueur ?",
-        "Quel est le nombre de pays participants ?",
-        "Qui était le meilleur buteur ?",
+        question_1,question_2,question_3,question_4, question_5 = "Quel est le pays organisateur ?",\
+        "Quel est le pays vainqueur ?",\
+        "Quel est le nombre de pays participants ?",\
+        "Qui était le meilleur buteur ?",\
         "Quelle est la mascotte ?"
 
         questions = [question_1, question_2, question_3, question_4]
@@ -145,7 +145,7 @@ class Quiz:
             answers = [r_answer_1,r_answer_2,r_answer_3,r_answer_4]
             alt_answers=fill_answers(df,val)
             answers_after = [r_answer_1,r_answer_2,r_answer_5,r_answer_4]
-            alt_answers_after =fill_answers(df,val)
+            alt_answers_after =fill_answers(df,val, after=True)
 
             # differentiate between before 1966 and after
             if val['itemLabel'] < '1966 FIFA World Cup':
